@@ -1,39 +1,36 @@
 # pinfcked
 
-## around 0
+According to Copilot: *The overall purpose of the program is to take a 4-digit PIN, find adjacent digits for each digit, and print all possible combinations of these adjacent digits.*
 
-0000
-1000
-9000
+The scenario is when you effed up the key safe's new PIN and you need a list of potential PINs to brute-force open the safe again.
 
-## around 1
+## Example
 
-1000
-0000
-2000
+You believe to have coded the new PIN as `0000`, but it's just not working...
 
-## around 2
+In general, there are 3*3*3*3 = 81-1 combinations (-1 because of `0000` which is the one not working).
 
-2000
-1000
-3000
+So, potential PIN candidates are:
 
+`1000`
+`0100`
+`0010`
+`0001`
+`1100`
 ...
+`9900`
+`9990`
+`9999`
 
-## around 0000
+## Usage
 
-There are 3*3*3*3 = 81-1 combinations (-1 because of 0000 which is the one not working)
+```
+go get
+go test
+go build
+./pinfcked 0000
+```
 
-1000 0100 0010 0001
-1100 1110 1111
+### Debug
 
-1900 9100 9910 9991
-1199 1119
-
-1990 9190 9919
-
-...
-
-9000 0900 0090 0009
-9900 9990 9999
-
+`./pinfcked -debug 1234`
